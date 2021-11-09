@@ -6,9 +6,27 @@
         <?php
         exit;
     }
+
+    require 'classes/anuncios.class.php';
+    $a = new Anuncios();
+    if(isset($_POST['titulo']) && !empty($_POST['titulo'])) {
+        $titulo = addslashes($_POST['titulo']);
+        $categoria = addslashes($_POST['categoria']);
+        $valor = addslashes($_POST['valor']);
+        $descricao = addslashes($_POST['descricao']);
+        $estado = addslashes($_POST['estado']);
+
+        $a->addAnuncio($titulo, $categoria, $valor, $descricao, $estado);
+
+        ?>
+        <div class="alert alert-success">
+            Produto adicionado com sucesso!
+        </div>
+        <?php
+    }
 ?>
     <div class="container">
-        <h1>Meus Anúncios - Adicionar Anuncios</h1>
+        <h1>Meus Anúncios - Adicionar Anúncios</h1>
 
         <form method="POST" enctype="multipart/form-data">
             <div class="form-group">
@@ -40,7 +58,7 @@
             </div>
             <div class="form-group">
                 <label for="estado">Estado de Conservação:</label>
-                <select name="categoria" id="categoria" class="form-control">
+                <select name="estado" id="estado" class="form-control">
                     <option value="0">Ruim</option>
                     <option value="1">Bom</option>
                     <option value="2">Ótimo</option>
