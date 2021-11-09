@@ -31,7 +31,7 @@
                     <tr>
                         <td><img src="assets/img/anuncios/<?php echo $anuncio['url']; ?>" border="0"></td>
                         <td><?php echo $anuncio['titulo']; ?></td>
-                        <td>R$ <?php echo number_format($anuncio['titulo'], 2); ?></td>
+                        <td>R$ <?php echo number_format($anuncio['valor'], 2); ?></td>
                         <td></td>
                     </tr>
                 <?php endforeach; ?>
