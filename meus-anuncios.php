@@ -38,7 +38,10 @@
                         </td>
                         <td><?php echo $anuncio['titulo']; ?></td>
                         <td>R$ <?php echo number_format($anuncio['valor'], 2); ?></td>
-                        <td></td>
+                        <td>
+                            <a href="editar-anuncio.php?id=<?php echo $anuncio['id']; ?>" class="btn btn-default">Editar</a>
+                            <a href="excluir-anuncio.php?id=<?php echo $anuncio['id']; ?>" class="btn btn-danger">Excluir</a>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
         </table>
