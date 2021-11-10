@@ -29,7 +29,13 @@
                 foreach($anuncios as $anuncio):
                 ?>
                     <tr>
-                        <td><img src="assets/img/anuncios/<?php echo $anuncio['url']; ?>" border="0"></td>
+                        <td>
+                            <?php if(!empty($anuncio['url'])): ?>
+                                <img src="assets/img/anuncios/<?php echo $anuncio['url']; ?>" height="50" border="0">
+                            <?php else: ?>
+                                <img src="assets/img/default.jpg" border="0" height="50" >
+                            <?php endif; ?>
+                        </td>
                         <td><?php echo $anuncio['titulo']; ?></td>
                         <td>R$ <?php echo number_format($anuncio['valor'], 2); ?></td>
                         <td></td>
